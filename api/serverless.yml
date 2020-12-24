@@ -9,16 +9,26 @@ provider:
   stage: dev
   region: us-east-1
 
-  environment:
-    DYNAMODB_USERS: ${ssm:${self:custom.stage}-dynamodb-users-table}
-
 functions:
   register:
-    role: ${ssm:${self:custom.stage}-register-iam_role}
+    role: ${ssm:${self:custom.stage}-register-iam-role}
     handler: register/handler.register
+    environment:
+      DYNAMODB_USERS: ${ssm:${self:custom.stage}-dynamodb-users-table}
     events:
      - http:
          path: users
+         method: post
+  login:
+    role: ${ssm:${self:custom.stage}-login-iam-role}
+    handler: login/handler.login
+    environment:
+      DYNAMODB_USERS: ${ssm:${self:custom.stage}-dynamodb-users-table}
+      JWT_SECRET: ${ssm:${self:custom.stage}-jwt-secret}
+      EMAIL_GSI: ${ssm:${self:custom.stage}-email-gsi}
+    events:
+     - http:
+         path: login
          method: post
 
 custom:
