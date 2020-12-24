@@ -1,0 +1,1 @@
+jwt_secret = "0YfU3LDpD-7f9hhtY1rmhmTdqCrmoeHRzARBlOjZqME"
