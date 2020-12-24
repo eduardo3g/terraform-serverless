@@ -1,9 +1,11 @@
 const jwt = require('jsonwebtoken');
 
 exports.authorizer = function(event, context, callback) {
-  const token = event.authorizationToken;
+  const authHeader = event.authorizationToken; 
 
   try {
+    const [, token] = authHeader.split(' ');
+
     const user = jwt.verify(token, process.env.JWT_SECRET);
     callback(null, generatePolicy('user', 'Allow', event.methodArn, user));
   } catch (exception) {
