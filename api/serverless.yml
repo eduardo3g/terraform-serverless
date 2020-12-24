@@ -30,6 +30,10 @@ functions:
      - http:
          path: login
          method: post
+  authorizer:
+    handler: authorizer/handler.authorizer
+    environment:
+      JWT_SECRET: ${ssm:${self:custom.stage}-jwt-secret}
 
 custom:
   stage: ${opt:stage, self:provider.stage}
