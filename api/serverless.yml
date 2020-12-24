@@ -1,0 +1,25 @@
+service: api
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  stage: dev
+  region: us-east-1
+
+  environment:
+    DYNAMODB_USERS: ${ssm:${self:custom.stage}-dynamodb-users-table}
+
+functions:
+  register:
+    role: ${ssm:${self:custom.stage}-register-iam_role}
+    handler: register/handler.register
+    events:
+     - http:
+         path: users
+         method: post
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
