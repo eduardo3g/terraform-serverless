@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 module "users" {
   source         = "../../infra/users"
   environment    = "${var.environment}"
@@ -21,4 +23,6 @@ module "bookings" {
 module "notifications" {
   source         = "../../infra/notifications"
   environment    = "${var.environment}"
+  account_id = "${data.aws_caller_identity.current.account_id}"
+  region = "${var.region}"
 }
