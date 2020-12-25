@@ -15,6 +15,8 @@ functions:
     role: ${ssm:${self:custom.stage}-bookings-stream-consumer-iam-role}
     events:
      - stream: ${ssm:${self:custom.stage}-dynamodb-bookings-stream}
+    environment:
+      SNS_NOTIFICATIONS_TOPIC: ${ssm:${self:custom.stage}-notifications-topic}
 
 custom:
   stage: ${opt:stage, self:provider.stage}
