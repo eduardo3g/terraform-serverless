@@ -10,6 +10,12 @@ resource "aws_sqs_queue" "sms" {
   })
 }
 
+resource "aws_ssm_parameter" "sms_sqs" {
+  name  = "${var.environment}-sms-sqs"
+  type  = "String"
+  value = aws_sqs_queue.sms.arn
+}
+
 resource "aws_sqs_queue" "sms_dlq" {
   name = "${var.environment}-sms-queue-dlq"
 }
