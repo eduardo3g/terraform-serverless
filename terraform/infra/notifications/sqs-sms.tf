@@ -6,7 +6,7 @@ resource "aws_sqs_queue" "sms" {
   })
   policy         = templatefile("${path.module}/templates/sqs-sns-policy.tpl", {
     resource = "arn:aws:sqs:${var.region}:${var.account_id}:${var.environment}-sms-queue"
-    source_arn = "${aws_sns_topic.notifications.arn}"
+    source_arn = aws_sns_topic.notifications.arn
   })
 }
 

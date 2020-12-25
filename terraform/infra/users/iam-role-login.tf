@@ -7,5 +7,5 @@ resource "aws_iam_role" "login_iam_role" {
 resource "aws_ssm_parameter" "login_iam_role" {
   name  = "${var.environment}-login-iam-role"
   type  = "String"
-  value = "${aws_iam_role.login_iam_role.arn}"
+  value = aws_iam_role.login_iam_role.arn
 }

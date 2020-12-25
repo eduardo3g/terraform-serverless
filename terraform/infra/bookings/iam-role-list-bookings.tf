@@ -7,5 +7,5 @@ resource "aws_iam_role" "list_bookings_iam_role" {
 resource "aws_ssm_parameter" "list-bookings_iam_role" {
   name  = "${var.environment}-list-bookings-iam-role"
   type  = "String"
-  value = "${aws_iam_role.list_bookings_iam_role.arn}"
+  value = aws_iam_role.list_bookings_iam_role.arn
 }
