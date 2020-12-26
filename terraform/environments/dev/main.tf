@@ -34,4 +34,7 @@ module "system" {
   email_from_password  = var.email_from_password
   email_to             = var.email_to
   smtp_server          = var.smtp_server
+  message_bird_api_key = var.message_bird_api_key
+  sms_phone_from       = var.sms_phone_from
+  sms_phone_to         = var.sms_phone_to
 }
