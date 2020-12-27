@@ -49,6 +49,9 @@ The API is really simple and has only four endpoints:
 - <b>POST/</b>bookings: register a new booking.
 - <b>GET/</b>bookings: list all the bookings (<i>restricted to ADMIN users<i>).
 
+Click on the button below and import the Insomnia workspace to do the API requests after the deployment step:
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Terraform%20Serverless&uri=https%3A%2F%2Fgist.github.com%2Feduardo3g%2F0bc07cdc507e62b90c620b3eab50c1f2)
 
 ## Deploy
 
