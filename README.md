@@ -10,7 +10,7 @@
 
 ## Introduction
 
-The main purpose of this small event-driven project is to show how to use <a href="https://www.terraform.io/">Terraform</a> to provision immutable Cloud-Native infrastructure, along with the Serverless Framework.
+The main purpose of this small event-driven project is to show how to use <a href="https://www.terraform.io/">Terraform</a> to provision immutable Cloud-Native infrastructure, along with the <a href="https://www.serverless.com/">Serverless Framework</a>.
 
 ## Infrastructure as Code (IaC) 👷🏻
 
@@ -47,7 +47,7 @@ The API is really simple and has only four endpoints:
 - <b>POST/</b>users: register a new user.
 - <b>POST/</b>login: user authentication (returns a JWT token).
 - <b>POST/</b>bookings: register a new booking.
-- <b>GET/</b>bookings: list all the bookings (restricted to ADMIN users).
+- <b>GET/</b>bookings: list all the bookings (<i>restricted to ADMIN users<i>).
 
 
 ## Deploy
@@ -55,14 +55,13 @@ The API is really simple and has only four endpoints:
 ### Prerequisites
 
 First of all, you need an AWS account and create a user with programmatic admin access. Then, <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">configure the AWS CLI</a> on your workstation.
-
 <br/>
 
-Once you're done, clone this repository and move to the root directory.
+Once you're done, clone this repository and move yourself to the root directory.
 
 ### Environment variables
 
-The API depends on two external services to send e-mails and SMS. Create accounts on each of them:
+The API depends on two external services to send e-mails and SMSs when a new booking is registed in the DynamoDB table. Create accounts on each of them:
   - <a href="https://www.zoho.com/pt-br/">Zoho</a>
   - <a href="https://messagebird.com/en/">Messagebird</a>
 
@@ -82,7 +81,7 @@ In order to keep things simple, I recommend only changing the following keys:
   - email_from: use the e-mail you created at <a href="https://www.zoho.com/pt-br/">Zoho</a> (the one containing the domain <b>@zohomail.com</b>)
   - email_from_password: your password from Zoho
   - email_to: create a temporary e-mail box at <a href="https://temp-mail.org/pt/">TempMail</a> (leave the window opened while you're testing)
-  - message_bird_api_key: your test API Key from <a href="https://messagebird.com/en/">Messagebird</a> (no SMSs will be sent with this key)
+  - message_bird_api_key: your test API Key from <a href="https://messagebird.com/en/">Messagebird</a> (No SMSs will be sent with this key. Use the production one if you want to receive them.)
   - sms_phone_from: your cellphone number (e.g: "+55119...")
   - sms_phone_to: your cellphone number (e.g: "+55119...")
 
