@@ -47,7 +47,7 @@ The API is really simple and has only four endpoints:
 - <b>POST/</b>users: register a new user.
 - <b>POST/</b>login: user authentication (returns a JWT token).
 - <b>POST/</b>bookings: register a new booking.
-- <b>GET/</b>bookings: list all the bookings (<i>restricted to ADMIN users<i>).
+- <b>GET/</b>bookings: list all the bookings (<i>restricted to ADMIN users</i>).
 
 Click on the button below and import the Insomnia workspace to do the API requests after the deployment step:
 
