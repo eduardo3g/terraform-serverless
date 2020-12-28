@@ -36,7 +36,7 @@ These are the main infrastructure resources provisioned by Terraform to create a
 
 ## Serverless ☁️
 
-It is also possible to provision the serverless resources mentioned previously with the Serverless Framework, however, in this project, I chose to separate responsabilities and only Terraform is used to manage infrastructure. <br />
+It is also possible to provision the resources mentioned previously with the Serverless Framework, however, in this project, I chose to separate responsabilities and only Terraform is used to manage infrastructure. <br />
 
 Therefore, the main usage of Serverless in this project is to create the API gateway endpoints and Lambda functions triggered by API Gateway's events.
 
