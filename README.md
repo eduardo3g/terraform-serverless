@@ -92,7 +92,7 @@ In order to keep things simple, I recommend only changing the following keys:
 
 Luckly, now you just need to run a single command and Terraform will do the magic for you 😛
 ```bash
-# Run the command bellow to avoid lack of permission the run the deploy shell script
+# Run the command bellow to avoid lack of permission to run the deploy shell script
 chmod u=rwx,g=r,o=r deploy.sh
 
 # Deploy everything to a development stage at AWS
@@ -109,7 +109,7 @@ In the other hand, the Serverless Framework will create the `dev-api` and 8 Lamb
 
 Now that you've tested everything, feel free to delete all the resources at AWS. It's as simple as the deployment script:
 ```bash
-# Run the command bellow to avoid lack of permission the run the destroy shell script
+# Run the command bellow to avoid lack of permission to run the destroy shell script
 chmod u=rwx,g=r,o=r deploy.sh
 
 # Remove everything from the development stage at AWS
