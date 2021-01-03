@@ -81,12 +81,12 @@ nano secrets.auto.tfvars
 ```
 
 In order to keep things simple, I recommend only changing the following keys:
-  - email_from: use the e-mail you created at <a href="https://www.zoho.com/pt-br/">Zoho</a> (the one containing the domain <b>@zohomail.com</b>)
-  - email_from_password: your password from Zoho
-  - email_to: create a temporary e-mail box at <a href="https://temp-mail.org/pt/">TempMail</a> (leave the window opened while you're testing)
-  - message_bird_api_key: your test API Key from <a href="https://messagebird.com/en/">Messagebird</a> (No SMSs will be sent with this key. Use the production one if you want to receive them.)
-  - sms_phone_from: your cellphone number (e.g: "+55119...")
-  - sms_phone_to: your cellphone number (e.g: "+55119...")
+  - <b>email_from</b>: use the e-mail you created at <a href="https://www.zoho.com/pt-br/">Zoho</a> (the one containing the domain <b>@zohomail.com</b>)
+  - <b>email_from_password</b>: your password from Zoho
+  - <b>email_to</b>: create a temporary e-mail box at <a href="https://temp-mail.org/pt/">TempMail</a> (leave the window opened while you're testing)
+  - <b>message_bird_api_key</b>: your test API Key from <a href="https://messagebird.com/en/">Messagebird</a> (No SMSs will be sent with this key. Use the production one if you want to receive them.)
+  - <b>sms_phone_from</b>: your cellphone number (e.g: "+55119...")
+  - <b>sms_phone_to</b>: your cellphone number (e.g: "+55119...")
 
 ### Deploy
 
